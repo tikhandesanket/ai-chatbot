@@ -26,14 +26,15 @@ After checking out the repo, run `bin/setup` to install dependencies. You can al
 
 Steps to install 
 
-1)Add gem in your Gem file - ` gem 'ai_chatbot', '~> 0.1.2`
+1) Add gem in your Gem file - ` gem 'ai_chatbot', '~> 0.1.2`
 
-2)How to use it - pass your question in the question variable  AiChatbot::Chatbot.ask_question(question) 
+2) How to use it - pass your question in the question variable   `AiChatbot::Chatbot.ask_question(question)`
 
-3)If the answer doesn't match or does not exist train your model to match 
+3) If the answer doesn't match or does not exist train your model to match 
 
- AiChatbot::Chatbot.train_model("How to rename column in table","rails generate migration RenameOldColumnNameToNewColumnNameInTableName..")
+  `AiChatbot::Chatbot.train_model("How to rename column in table","rails generate migration RenameOldColumnNameToNewColumnNameInTableName..")`
 
+4) If you want tu update answer `AiChatbot::Chatbot.update_answer("How to rename column in table"," ADD UPDATED ANSWER HERE")` 
 
 make sure you have a machine with Python3 also install scikit-learn by  pip install scikit-learn `Python3 also install scikit-learn by  pip install scikit-learn`
 
