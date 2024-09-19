@@ -10,7 +10,7 @@ TODO: Replace `ai_chatbot` with your gem name right after releasing it to RubyGe
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add gem 'ai_chatbot', '~> 0.1.2'
+    $ bundle add gem 'ai_chatbot', '~> 0.1.3'
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
@@ -26,7 +26,7 @@ After checking out the repo, run `bin/setup` to install dependencies. You can al
 
 Steps to install 
 
-1) Add gem in your Gem file - ` gem 'ai_chatbot', '~> 0.1.2`
+1) Add gem in your Gem file - ` gem 'ai_chatbot', '~> 0.1.3`
 
 2) How to use it - pass your question in the question variable   `AiChatbot::Chatbot.ask_question(question)`
 
