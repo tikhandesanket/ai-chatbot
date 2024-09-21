@@ -32,12 +32,17 @@ model.fit(questions, answers)
 def main(action, query=None, new_answer=None):
     if action == "predict":
         return get_prediction(query)
-    elif action == "train":
+    elif action == "train_model":
         return train_model(query, new_answer)
-    elif action == "update":
+    elif action == "update_answer":
         return update_answer(query, new_answer)
-    elif action == "list":
+    elif action == "update_or_delete_question":
+        return update_or_delete_question(query, new_answer)  # Corrected here, calling the right function
+    elif action == "list_questions":
         return list_questions()
+    elif action == "list_answers":
+        return list_answers()    
+            
 
 # Function to predict the response with confidence check
 def get_prediction(query):
@@ -48,7 +53,7 @@ def get_prediction(query):
     similarities = cosine_similarity(query_vec, question_vecs)
     max_similarity = similarities.max()
 
-    threshold = 0.70
+    threshold = 0.65
     if max_similarity < threshold:
         return "No good match found. Please provide the correct answer."
     else:
@@ -89,9 +94,45 @@ def update_answer(existing_question, new_answer):
     else:
         return "Question not found. Please provide a valid question."    
 
+def update_or_delete_question(existing_question, new_question):
+    global questions  # Only 'questions' is global, not 'new_question'
+    if new_question=="None":
+        new_question = None
+    
+    if existing_question in questions:
+        if new_question:
+            # Find the index of the existing question
+            index = questions.index(existing_question)
+            # Update the question
+            questions[index] = new_question
+            # Retrain the model with updated data
+            model.fit(questions, answers)
+            # Save the updated model and data
+            with open("qa_model.pkl", "wb") as f:
+                pickle.dump({"questions": questions, "answers": answers}, f)
+            return f"Question updated from '{existing_question}' to '{new_question}'"
+        else:
+            # Remove the question if no new question is provided
+            index = questions.index(existing_question)
+            del questions[index]
+            del answers[index]  # Ensure you also delete the corresponding answer
+            # Retrain the model with updated data
+            model.fit(questions, answers)
+            # Save the updated model and data
+            with open("qa_model.pkl", "wb") as f:
+                pickle.dump({"questions": questions, "answers": answers}, f)
+            return f"Question '{existing_question}' deleted successfully."
+    else:
+        return "Question not found. Please provide a valid question."
+
+
 def list_questions():
     global questions
     return questions
+
+def list_answers():
+    global answers
+    return answers    
 
 if __name__ == "__main__":
     # Expecting action (predict/train), question, and answer (if training)
