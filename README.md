@@ -12,7 +12,7 @@ Install the gem and add to the application's Gemfile by executing:
 
     $ bundle add gem 'ai_chatbot', '~> 0.1.6.2'
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+If the bundler is not being used to manage dependencies, install the gem by executing:
 
     $ gem install ai_chatbot
 
@@ -40,8 +40,11 @@ make sure you have a machine with Python3 also install scikit-learn by  pip inst
 
 here are some methods you can use in your application 
 `1-AiChatbot::Chatbot.update_answer(existing_question, new_answer)
- 2-AiChatbot::Chatbot.update_or_delete_question(existing_question, new_question) // to delete question e.g.  AiChatbot::Chatbot.update_or_delete_question(existing_question, "None") 
+
+ 2-AiChatbot::Chatbot.update_or_delete_question(existing_question, new_question) // to delete question e.g.  AiChatbot::Chatbot.update_or_delete_question(existing_question)
+ 
  3-AiChatbot::Chatbot.list_questions()
+
  4-AiChatbot::Chatbot.list_answers()`
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
