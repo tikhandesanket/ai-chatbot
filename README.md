@@ -26,7 +26,7 @@ After checking out the repo, run `bin/setup` to install dependencies. You can al
 
 Steps to install 
 
-1) Add gem in your Gem file - ` gem 'ai_chatbot', '~> 0.1.6.1`
+1) Add gem in your Gem file - ` gem 'ai_chatbot', '~> 0.1.6.2`
 
 2) How to use it - pass your question in the question variable   `AiChatbot::Chatbot.ask_question(question)`
 

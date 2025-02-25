@@ -10,8 +10,8 @@ import os
 if os.path.exists("qa_model.pkl"):
     with open("qa_model.pkl", "rb") as f:
         model_data = pickle.load(f)
-        questions = model_data['questions']
-        answers = model_data['answers']
+        questions = model_data.get(['questions'],[])
+        answers = model_data.get(['answers'],[])
 else:
     questions = [
         "How to create a new model in Rails?",
