@@ -6,11 +6,11 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Sanket"]
   spec.email         = ["sanket.tikhande@gmail.com"]
 
-  spec.summary       = %q{A chatbot for Rails integration with AI model using Python}
-  spec.description   = %q{Integrates a chatbot using Python for predictions and training in a Rails application.}
+  spec.summary       = "Fix: Improved response caching in ChatbotService"
+  spec.description   = "Added caching to avoid redundant DB queries, improving chatbot response time. Also updated unanswered question logging."
   # You can remove this line if no homepage is available
-  spec.homepage      = "https://github.com/tikhandesanket/ai_chatbot"
-  # spec.metadata['source_code_uri'] = 'https://github.com/tikhandesanket/ai_chatbot'
+  spec.homepage      = "https://github.com/tikhandesanket/ai-chatbot"
+  spec.metadata['source_code_uri'] = 'https://github.com/tikhandesanket/ai-chatbot'
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"]
