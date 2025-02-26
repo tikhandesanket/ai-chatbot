@@ -35,14 +35,14 @@ Steps to install
 make sure you have a machine with Python3 also install scikit-learn by  pip install scikit-learn `Python3 also install scikit-learn by  pip install scikit-learn`
 
 here are some methods you can use in your application 
-`1-AiChatbot::Chatbot.update_answer(existing_question, new_answer)
+`1-AiChatbot::Chatbot.update_answer(existing_question, new_answer)`
 
- 2-AiChatbot::Chatbot.update_or_delete_question(existing_question, new_question)
+ `2-AiChatbot::Chatbot.update_or_delete_question(existing_question, new_question)`
      // to delete question e.g.  AiChatbot::Chatbot.update_or_delete_question(existing_question)
  
- 3-AiChatbot::Chatbot.list_questions()
+ `3-AiChatbot::Chatbot.list_questions()`
 
- 4-AiChatbot::Chatbot.list_answers()`
+ `4-AiChatbot::Chatbot.list_answers()`
 
 Run ' bundle exec rake install ' to install this gem onto your local machine. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
