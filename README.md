@@ -1,12 +1,8 @@
 # Ai_Chatbot
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ai_chatbot`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to the  new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ai_chatbot`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 ## Installation
-
-TODO: Replace `ai_chatbot` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release it to RubyGems.org.
 
 Install the gem and add to the application's Gemfile by executing:
 
@@ -34,20 +30,21 @@ Steps to install
 
   `AiChatbot::Chatbot.train_model("How to rename a column in the table", "rails generate migration RenameOldColumnNameToNewColumnNameInTableName..")`
 
-4) If you want to update the answer `AiChatbot::Chatbot.update_answer("How to rename column in table"," ADD UPDATED ANSWER HERE")` 
+4) If you want to update the answer `AiChatbot::Chatbot.update_answer("How to rename a column in the table"," ADD UPDATED ANSWER HERE")` 
 
 make sure you have a machine with Python3 also install scikit-learn by  pip install scikit-learn `Python3 also install scikit-learn by  pip install scikit-learn`
 
 here are some methods you can use in your application 
 `1-AiChatbot::Chatbot.update_answer(existing_question, new_answer)
 
- 2-AiChatbot::Chatbot.update_or_delete_question(existing_question, new_question) // to delete question e.g.  AiChatbot::Chatbot.update_or_delete_question(existing_question)
+ 2-AiChatbot::Chatbot.update_or_delete_question(existing_question, new_question)
+     // to delete question e.g.  AiChatbot::Chatbot.update_or_delete_question(existing_question)
  
  3-AiChatbot::Chatbot.list_questions()
 
  4-AiChatbot::Chatbot.list_answers()`
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Run ' bundle exec rake install ' to install this gem onto your local machine. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
