@@ -6,11 +6,11 @@ Welcome to your new gem! In this directory, you'll find the files you need to be
 
 ## Installation
 
-TODO: Replace `ai_chatbot` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+TODO: Replace `ai_chatbot` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release it to RubyGems.org.
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add gem 'ai_chatbot', '~> 0.1.6.2'
+    $ bundle add gem 'ai_chatbot', '~> 0.1.6.4'
 
 If the bundler is not being used to manage dependencies, install the gem by executing:
 
@@ -26,15 +26,15 @@ After checking out the repo, run `bin/setup` to install dependencies. You can al
 
 Steps to install 
 
-1) Add gem in your Gem file - ` gem 'ai_chatbot', '~> 0.1.6.2`
+1) Add gem in your Gem file - ` gem 'ai_chatbot', '~> 0.1.6.4`
 
 2) How to use it - pass your question in the question variable   `AiChatbot::Chatbot.ask_question(question)`
 
 3) If the answer doesn't match or does not exist train your model to match 
 
-  `AiChatbot::Chatbot.train_model("How to rename column in table","rails generate migration RenameOldColumnNameToNewColumnNameInTableName..")`
+  `AiChatbot::Chatbot.train_model("How to rename a column in the table", "rails generate migration RenameOldColumnNameToNewColumnNameInTableName..")`
 
-4) If you want tu update answer `AiChatbot::Chatbot.update_answer("How to rename column in table"," ADD UPDATED ANSWER HERE")` 
+4) If you want to update the answer `AiChatbot::Chatbot.update_answer("How to rename column in table"," ADD UPDATED ANSWER HERE")` 
 
 make sure you have a machine with Python3 also install scikit-learn by  pip install scikit-learn `Python3 also install scikit-learn by  pip install scikit-learn`
 
