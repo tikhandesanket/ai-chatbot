@@ -45,6 +45,35 @@ here are some methods you can use in your application
  `4-AiChatbot::Chatbot.list_answers()`
 
 Run ' bundle exec rake install ' to install this gem onto your local machine. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+========================================================================================================================================================================================
+                                                                Version ai_chatbot-0.1.6.5.1
+========================================================================================================================================================================================
+
+Version ai_chatbot-0.1.6.5.1
+
+Installation Steps
+
+1) Install the required dependencies:
+
+    `pip install psycopg2`
+    `pip install dotenv`
+
+2) Add the following environment variables in your production.rb file:
+    
+    # ENV['DB_NAME'] ||= 'YOUR DB NAME'
+    # ENV['DB_USERNAME'] ||= 'XXUSERNAMEXX'
+    # ENV['DB_PASSWORD'] ||= 'XXXXXXX'
+    # ENV['DB_HOST'] ||= 'XXXXX.72.125'
+    # ENV['DB_PORT'] ||= '5432'
+
+3) Add the AI Chatbot gem version in your Gemfile:
+
+    `gem 'ai_chatbot', '0.1.6.5.1'`
+
+4) Run bundle install to install the gem:
+
+   `bundle install`
+
 
 ## Contributing
 
