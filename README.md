@@ -1,4 +1,4 @@
-# Ai_Chatbot
+# ai_chatbot
 
 Welcome to the  new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ai_chatbot`. To experiment with that code, run `bin/console` for an interactive prompt.
 
@@ -47,10 +47,10 @@ here are some methods you can use in your application
 `Run ' bundle exec rake install ' to install this gem onto your local machine. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org)`
 
                                                                
-========================================================================================================================================================================================
+====================================================================================================================================================================
 
 
-`Version ai_chatbot-0.1.6.5.1`
+# Version ai_chatbot-0.1.6.5.1
 
 Installation Steps
 
@@ -61,11 +61,11 @@ Installation Steps
 
 2) Add the following environment variables in your production.rb file:
     
-     ENV['DB_NAME'] ||= 'YOUR DB NAME'
-     ENV['DB_USERNAME'] ||= 'XXUSERNAMEXX'
-     ENV['DB_PASSWORD'] ||= 'XXXXXXX'
-     ENV['DB_HOST'] ||= 'XXXXX.72.125'
-     ENV['DB_PORT'] ||= '5432'
+     `ENV['DB_NAME'] ||= 'YOUR DB NAME'`
+     `ENV['DB_USERNAME'] ||= 'XXUSERNAMEXX'`
+     `ENV['DB_PASSWORD'] ||= 'XXXXXXX'`
+     `ENV['DB_HOST'] ||= 'XXXXX.72.125'`
+     `ENV['DB_PORT'] ||= '5432'`
 
 3) Add the AI Chatbot gem version in your Gemfile:
 
@@ -74,6 +74,21 @@ Installation Steps
 4) Run bundle install to install the gem:
 
    `bundle install`
+   
+# Rails db migration 
+`class CreateQaData < ActiveRecord::Migration[7.0]`
+  `def change`
+    `create_table :qa_data do |t|`
+      `t.text :question, unique: true, null: false`
+      `t.text :answer, null: false`
+
+      `t.timestamps`
+    `end`
+  `end`
+`end`
+
+
+
 
 
 ## Contributing
