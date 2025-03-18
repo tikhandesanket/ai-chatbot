@@ -1,105 +1,156 @@
-# ai_chatbot
+# AI Chatbot
 
-Welcome to the  new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ai_chatbot`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to **AI Chatbot**! This gem provides a simple and efficient way to integrate chatbot functionality into your Ruby application.
 
-## Installation
+---
 
-Install the gem and add to the application's Gemfile by executing:
+## 🚀 Installation
 
-    $ bundle add gem 'ai_chatbot', '~> 0.1.6.4'
+### Add to Your Gemfile:
+```ruby
+bundle add 'ai_chatbot', '~> 0.1.6.4'
+```
 
-If the bundler is not being used to manage dependencies, install the gem by executing:
+### Install Manually:
+```sh
+gem install ai_chatbot
+```
 
-    $ gem install ai_chatbot
+---
 
-## Usage
+## 📖 Usage
 
-TODO: Write usage instructions here
+### Asking a Question
+Pass a question to the chatbot and get an AI-generated response:
+```ruby
+AiChatbot::Chatbot.ask_question("How do I create a migration in Rails?")
+```
 
-## Development
+### Training the Model
+If the chatbot response is incorrect or missing, you can train it:
+```ruby
+AiChatbot::Chatbot.train_model("How to rename a column in the table", "rails generate migration RenameOldColumnNameToNewColumnNameInTableName")
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+### Updating an Answer
+To modify an existing response:
+```ruby
+AiChatbot::Chatbot.update_answer("How to rename a column in the table", "UPDATED ANSWER HERE")
+```
 
-Steps to install 
+### Available Methods:
+- `AiChatbot::Chatbot.update_answer(existing_question, new_answer)`
+- `AiChatbot::Chatbot.update_or_delete_question(existing_question, new_question)` *(To delete: `AiChatbot::Chatbot.update_or_delete_question(existing_question)`) *
+- `AiChatbot::Chatbot.list_questions()`
+- `AiChatbot::Chatbot.list_answers()`
 
-1) Add gem in your Gem file - ` gem 'ai_chatbot', '~> 0.1.6.4`
+---
 
-2) How to use it - pass your question in the question variable   `AiChatbot::Chatbot.ask_question(question)`
+## 🛠 Development Setup
 
-3) If the answer doesn't match or does not exist train your model to match 
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/tikhandesanket/ai_chatbot.git
+   cd ai_chatbot
+   ```
+2. Install dependencies:
+   ```sh
+   bin/setup
+   ```
+3. Open an interactive console to test the gem:
+   ```sh
+   bin/console
+   ```
+4. Install the gem locally:
+   ```sh
+   bundle exec rake install
+   ```
+5. To release a new version:
+   - Update `version.rb`
+   - Run: `bundle exec rake release`
 
-  `AiChatbot::Chatbot.train_model("How to rename a column in the table", "rails generate migration RenameOldColumnNameToNewColumnNameInTableName..")`
+---
 
-4) If you want to update the answer `AiChatbot::Chatbot.update_answer("How to rename a column in the table"," ADD UPDATED ANSWER HERE")` 
+## 🔥 Version: ai_chatbot-0.1.6.5.1
 
-make sure you have a machine with Python3 also install scikit-learn by  pip install scikit-learn `Python3 also install scikit-learn by  pip install scikit-learn`
+### Installation Steps
 
-here are some methods you can use in your application 
-`1-AiChatbot::Chatbot.update_answer(existing_question, new_answer)`
+1. Install dependencies:
+   ```sh
+   pip install psycopg2
+   pip install dotenv
+   ```
+2. Set environment variables in `production.rb`:
+   ```ruby
+   ENV['DB_NAME'] ||= 'YOUR_DB_NAME'
+   ENV['DB_USERNAME'] ||= 'XXUSERNAMEXX'
+   ENV['DB_PASSWORD'] ||= 'XXXXXXX'
+   ENV['DB_HOST'] ||= 'XXXXX.72.125'
+   ENV['DB_PORT'] ||= '5432'
+   ```
+3. Add the latest gem version:
+   ```ruby
+   gem 'ai_chatbot', '0.1.6.5.1'
+   ```
+4. Install the gem:
+   ```sh
+   bundle install
+   ```
 
- `2-AiChatbot::Chatbot.update_or_delete_question(existing_question, new_question)`
-     // to delete question e.g.  AiChatbot::Chatbot.update_or_delete_question(existing_question)
- 
- `3-AiChatbot::Chatbot.list_questions()`
+### 📌 Rails Database Migration
+```ruby
+class CreateQaData < ActiveRecord::Migration[7.0]
+  def change
+    create_table :qa_data do |t|
+      t.text :question, unique: true, null: false
+      t.text :answer, null: false
+      t.timestamps
+    end
+  end
+end
+```
 
- `4-AiChatbot::Chatbot.list_answers()`
+---
 
-`Run ' bundle exec rake install ' to install this gem onto your local machine. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org)`
+## 🤝 Contributing
 
-                                                               
-====================================================================================================================================================================
+Bug reports and pull requests are welcome at **[GitHub Repository](https://github.com/tikhandesanket/ai_chatbot.git)**.
 
+### 📜 Code of Conduct
+Contributors must adhere to our [Code of Conduct](https://github.com/tikhandesanket/ai_chatbot/blob/master/CODE_OF_CONDUCT.md).
 
-# Version ai_chatbot-0.1.6.5.1
+---
 
-Installation Steps
+## 📜 License
 
-1) Install the required dependencies:
+This gem is available under the **[MIT License](https://opensource.org/licenses/MIT)**.
 
-    `pip install psycopg2`
-    `pip install dotenv`
+---
 
-2) Add the following environment variables in your production.rb file:
-    
-     `ENV['DB_NAME'] ||= 'YOUR DB NAME'`
-     `ENV['DB_USERNAME'] ||= 'XXUSERNAMEXX'`
-     `ENV['DB_PASSWORD'] ||= 'XXXXXXX'`
-     `ENV['DB_HOST'] ||= 'XXXXX.72.125'`
-     `ENV['DB_PORT'] ||= '5432'`
+### 📊 Download Trends
 
-3) Add the AI Chatbot gem version in your Gemfile:
-
-    `gem 'ai_chatbot', '0.1.6.5.1'`
-
-4) Run bundle install to install the gem:
-
-   `bundle install`
-   
-# Rails db migration 
-`class CreateQaData < ActiveRecord::Migration[7.0]`
-  `def change`
-    `create_table :qa_data do |t|`
-      `t.text :question, unique: true, null: false`
-      `t.text :answer, null: false`
-
-      `t.timestamps`
-    `end`
-  `end`
-`end`
+```mermaid
+%% Version download trends over time
+  title AI Chatbot Gem Download Trends
+  axis X
+    label Date
+  axis Y
+    label Downloads
+  line
+    "Sep 14, 2024" 208
+    "Sep 17, 2024" 190
+    "Sep 17, 2024" 219
+    "Sep 19, 2024" 231
+    "Sep 20, 2024" 183
+    "Sep 20, 2024" 186
+    "Sep 20, 2024" 235
+    "Sep 21, 2024" 186
+    "Sep 21, 2024" 734
+    "Feb 25, 2025" 128
+    "Feb 26, 2025" 177
+    "Mar 04, 2025" 118
+    "Mar 05, 2025" 152
 
 
+✨ *Happy Coding!* 🚀
 
-
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/tikhandesanket/ai_chatbot.git. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/tikhandesanket/ai_chatbot.git).
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the AiChatbot project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/ai_chatbot/blob/master/CODE_OF_CONDUCT.md).
-# ai_chatbot
