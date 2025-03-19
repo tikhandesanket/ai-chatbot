@@ -40,36 +40,13 @@ AiChatbot::Chatbot.update_answer("How to rename a column in the table", "UPDATED
 
 ### Available Methods:
 - `AiChatbot::Chatbot.update_answer(existing_question, new_answer)`
-- `AiChatbot::Chatbot.update_or_delete_question(existing_question, new_question)` *(To delete: `AiChatbot::Chatbot.update_or_delete_question(existing_question)`) *
+- `AiChatbot::Chatbot.update_or_delete_question(existing_question, new_question)`
+- *(To delete: `AiChatbot::Chatbot.update_or_delete_question(existing_question)`) *
 - `AiChatbot::Chatbot.list_questions()`
 - `AiChatbot::Chatbot.list_answers()`
 
 ---
 
-## 🛠 Development Setup
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/tikhandesanket/ai_chatbot.git
-   cd ai_chatbot
-   ```
-2. Install dependencies:
-   ```sh
-   bin/setup
-   ```
-3. Open an interactive console to test the gem:
-   ```sh
-   bin/console
-   ```
-4. Install the gem locally:
-   ```sh
-   bundle exec rake install
-   ```
-5. To release a new version:
-   - Update `version.rb`
-   - Run: `bundle exec rake release`
-
----
 
 ## 🔥 Version: ai_chatbot-0.1.6.5.1
 
@@ -126,30 +103,6 @@ Contributors must adhere to our [Code of Conduct](https://github.com/tikhandesan
 This gem is available under the **[MIT License](https://opensource.org/licenses/MIT)**.
 
 ---
-
-### 📊 Download Trends
-
-```mermaid
-%% Version download trends over time
-  title AI Chatbot Gem Download Trends
-  axis X
-    label Date
-  axis Y
-    label Downloads
-  line
-    "Sep 14, 2024" 208
-    "Sep 17, 2024" 190
-    "Sep 17, 2024" 219
-    "Sep 19, 2024" 231
-    "Sep 20, 2024" 183
-    "Sep 20, 2024" 186
-    "Sep 20, 2024" 235
-    "Sep 21, 2024" 186
-    "Sep 21, 2024" 734
-    "Feb 25, 2025" 128
-    "Feb 26, 2025" 177
-    "Mar 04, 2025" 118
-    "Mar 05, 2025" 152
 
 
 ✨ *Happy Coding!* 🚀
