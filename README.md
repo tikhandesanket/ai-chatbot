@@ -1,43 +1,110 @@
-# AiChatbot
+# AI Chatbot
 
-TODO: Delete this and the text below, and describe your gem
+Welcome to **AI Chatbot**! This gem provides a simple and efficient way to integrate chatbot functionality into your Ruby application.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ai_chatbot`. To experiment with that code, run `bin/console` for an interactive prompt.
+---
 
-## Installation
+## 🚀 Installation
 
-TODO: Replace `ai_chatbot` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+### Add to Your Gemfile:
+```ruby
+bundle add 'ai_chatbot', '~> 0.1.6.4'
+```
 
-Install the gem and add to the application's Gemfile by executing:
+### Install Manually:
+```sh
+gem install ai_chatbot
+```
 
+---
+
+## 📖 Usage
+
+<<<<<<< HEAD
     $ bundle add gem 'ai_chatbot', '~> 0.1.6.3'
+=======
+### Asking a Question
+Pass a question to the chatbot and get an AI-generated response:
+```ruby
+AiChatbot::Chatbot.ask_question("How do I create a migration in Rails?")
+```
+>>>>>>> d28fea59d6d07efc0b6155445cadd0a093fb3ae6
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+### Training the Model
+If the chatbot response is incorrect or missing, you can train it:
+```ruby
+AiChatbot::Chatbot.train_model("How to rename a column in the table", "rails generate migration RenameOldColumnNameToNewColumnNameInTableName")
+```
 
-    $ gem install ai_chatbot
+### Updating an Answer
+To modify an existing response:
+```ruby
+AiChatbot::Chatbot.update_answer("How to rename a column in the table", "UPDATED ANSWER HERE")
+```
 
-## Usage
+### Available Methods:
+- `AiChatbot::Chatbot.update_answer(existing_question, new_answer)`
+- `AiChatbot::Chatbot.update_or_delete_question(existing_question, new_question)`
+- *(To delete: `AiChatbot::Chatbot.update_or_delete_question(existing_question)`) *
+- `AiChatbot::Chatbot.list_questions()`
+- `AiChatbot::Chatbot.list_answers()`
 
-TODO: Write usage instructions here
+---
 
-## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## 🔥 Version: ai_chatbot-0.1.6.5.1
 
-Steps to install 
+### Installation Steps
 
+<<<<<<< HEAD
 1) Add gem in your Gem file - ` gem 'ai_chatbot', '~> 0.1.6.3`
+=======
+1. Install dependencies:
+   ```sh
+   pip install psycopg2
+   pip install dotenv
+   ```
+2. Set environment variables in `production.rb`:
+   ```ruby
+   ENV['DB_NAME'] ||= 'YOUR_DB_NAME'
+   ENV['DB_USERNAME'] ||= 'XXUSERNAMEXX'
+   ENV['DB_PASSWORD'] ||= 'XXXXXXX'
+   ENV['DB_HOST'] ||= 'XXXXX.72.125'
+   ENV['DB_PORT'] ||= '5432'
+   ```
+3. Add the latest gem version:
+   ```ruby
+   gem 'ai_chatbot', '0.1.6.5.1'
+   ```
+4. Install the gem:
+   ```sh
+   bundle install
+   ```
+>>>>>>> d28fea59d6d07efc0b6155445cadd0a093fb3ae6
 
-2) How to use it - pass your question in the question variable   `AiChatbot::Chatbot.ask_question(question)`
+### 📌 Rails Database Migration
+```ruby
+class CreateQaData < ActiveRecord::Migration[7.0]
+  def change
+    create_table :qa_data do |t|
+      t.text :question, unique: true, null: false
+      t.text :answer, null: false
+      t.timestamps
+    end
+  end
+end
+```
 
-3) If the answer doesn't match or does not exist train your model to match 
+---
 
-  `AiChatbot::Chatbot.train_model("How to rename column in table","rails generate migration RenameOldColumnNameToNewColumnNameInTableName..")`
+## 🤝 Contributing
 
-4) If you want tu update answer `AiChatbot::Chatbot.update_answer("How to rename column in table"," ADD UPDATED ANSWER HERE")` 
+Bug reports and pull requests are welcome at **[GitHub Repository](https://github.com/tikhandesanket/ai_chatbot.git)**.
 
-make sure you have a machine with Python3 also install scikit-learn by  pip install scikit-learn `Python3 also install scikit-learn by  pip install scikit-learn`
+### 📜 Code of Conduct
+Contributors must adhere to our [Code of Conduct](https://github.com/tikhandesanket/ai_chatbot/blob/master/CODE_OF_CONDUCT.md).
 
+<<<<<<< HEAD
 here are some methods you can use in your application 
 `1-AiChatbot::Chatbot.update_answer(existing_question, new_answer)
  2-AiChatbot::Chatbot.update_or_delete_question(existing_question, new_question) // to delete question e.g.  AiChatbot::Chatbot.update_or_delete_question(existing_question, "None") 
@@ -45,16 +112,16 @@ here are some methods you can use in your application
  4-AiChatbot::Chatbot.list_answers()`
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+=======
+---
+>>>>>>> d28fea59d6d07efc0b6155445cadd0a093fb3ae6
 
-## Contributing
+## 📜 License
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/tikhandesanket/ai_chatbot.git. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/tikhandesanket/ai_chatbot.git).
+This gem is available under the **[MIT License](https://opensource.org/licenses/MIT)**.
 
-## License
+---
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-## Code of Conduct
+✨ *Happy Coding!* 🚀
 
-Everyone interacting in the AiChatbot project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/ai_chatbot/blob/master/CODE_OF_CONDUCT.md).
-# ai_chatbot

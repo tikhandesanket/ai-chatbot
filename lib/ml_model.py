@@ -21,7 +21,7 @@ def load_data():
             model_data = pickle.load(f)
             questions = model_data.get('questions', [])
             answers = model_data.get('answers', [])
-            print(f"Loaded {len(questions)} Q&A pairs.")
+            print(f" Loaded {len(questions)} Q&A pairs.")
     else:
         # Default seed data
         questions.extend([
@@ -34,7 +34,7 @@ def load_data():
             "Migration is a database schema change.",
             "You can add a route in the config/routes.rb file."
         ])
-        print("No existing model found, using default seed data.")
+        print(" No existing model found, using default seed data.")
 
     retrain_model()
 
@@ -57,7 +57,7 @@ def get_prediction(query):
 
     threshold = 0.65
     if max_similarity < threshold:
-        return "No good match found. You may need to train the model with this question."
+        return " No good match found. You may need to train the model with this question."
     else:
         prediction = model.predict([query])
         return prediction[0]
@@ -75,8 +75,8 @@ def update_answer(existing_question, new_answer):
         answers[idx] = new_answer
         retrain_model()
         save_data()
-        return f"Answer updated for: '{existing_question}'"
-    return "Question not found."
+        return f" Answer updated for: '{existing_question}'"
+    return " Question not found."
 
 def update_or_delete_question(existing_question, new_question=None):
     if existing_question in questions:
@@ -91,7 +91,7 @@ def update_or_delete_question(existing_question, new_question=None):
         retrain_model()
         save_data()
         return action
-    return "Question not found."
+    return " Question not found."
 
 def list_questions():
     return "\n".join([f"{i+1}. {q}" for i, q in enumerate(questions)])
@@ -116,7 +116,7 @@ def main(action, query=None, answer=None):
     elif action == "list_answers":
         return list_answers()
     else:
-        return "Unknown action. Try: predict, train_model, update_answer, list_questions, list_answers"
+        return " Unknown action. Try: predict, train_model, update_answer, list_questions, list_answers"
 
 if __name__ == "__main__":
     action = sys.argv[1] if len(sys.argv) > 1 else None
