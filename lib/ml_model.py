@@ -21,7 +21,7 @@ def load_data():
             model_data = pickle.load(f)
             questions = model_data.get('questions', [])
             answers = model_data.get('answers', [])
-            print(f" Loaded {len(questions)} Q&A pairs.")
+            # print(f" Loaded {len(questions)} Q&A pairs.")
     else:
         # Default seed data
         questions.extend([
@@ -53,7 +53,7 @@ def get_prediction(query):
     similarities = cosine_similarity(query_vec, question_vecs)
     max_similarity = similarities.max()
 
-    print(f"🔍 Similarity Score: {max_similarity:.2f}")
+    #print(f"🔍 Similarity Score: {max_similarity:.2f}")
 
     threshold = 0.65
     if max_similarity < threshold:
